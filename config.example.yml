@@ -1,0 +1,53 @@
+# Copy to config.yml and fill in. config.yml is gitignored.
+# Every skill in this repo reads this file first.
+
+owner:
+  name: "Your Name"
+  email: "you@example.com"
+  location: "New York, NY"
+
+# Where the skills read and write. Relative to this repo, or an absolute path.
+workspace:
+  dir: "./workspace"
+  tracker_file: "job-application-tracker.md"
+  evaluations_dir: "evaluations"
+  guides_dir: "interview-guides"
+
+# Your resume variants. Add or remove lanes freely; the skills adapt.
+# Each lane needs a name, a local file, and the signals that make it the right pick.
+resumes:
+  - id: "primary"
+    label: "Solutions and Field Engineering"
+    file: "profile/resume-primary.md"
+    lead_when:
+      - customer facing technical delivery
+      - presales or postsales engineering
+      - deploying to production with customers
+      - integrations and solutions architecture
+      - developer relations or technical evangelism
+  - id: "secondary"
+    label: "Technical Program Management"
+    file: "profile/resume-secondary.md"
+    lead_when:
+      - cross functional coordination at scale
+      - dependency and risk management
+      - governance frameworks
+      - executive reporting
+      - multi quarter roadmap orchestration
+
+# Companies you actually want. Used by job-match-eval in watchlist mode.
+target_companies_file: "profile/target-companies.md"
+
+tracker:
+  # Days with no reply before a row is marked Ghosted.
+  ghost_after_days: 21
+  # Hours scanned on an incremental run. Overlaps the previous run on purpose.
+  incremental_window_hours: 36
+  # Days scanned on a full rebuild.
+  full_rebuild_days: 90
+
+scoring:
+  # Bands used by job-match-eval. Tighten these if scores feel inflated.
+  strong: 85
+  solid: 70
+  stretch: 55

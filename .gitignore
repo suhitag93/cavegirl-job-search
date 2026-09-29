@@ -1,0 +1,7 @@
+config.yml
+workspace/
+profile/resume-*.md
+!profile/resume-*.example.md
+profile/target-companies.md
+!profile/target-companies.example.md
+.DS_Store
